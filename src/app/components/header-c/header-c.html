@@ -1,0 +1,17 @@
+<nav>
+    <div class="header">
+        <img src="assets/images/garena.png" alt="logo" width="150">
+    </div>    
+    <div class="body"></div>    
+    <div class="footter">
+        @if (isLogin) {
+            <button (click)="route('/member/list')">รายการที่แนะนำ</button>
+            <button (click)="route('/member/profile')">โปรไฟล์ส่วนตัว</button>
+            <button (click)="route('/logout')" style="background: red;color: #fff;">ออกจากระบบ</button>
+        }
+        @else{
+            <button (click)="route('/login')">เข้าสู่ระบบ</button>
+            <button (click)="route('/register')">สมัครสมาชิก</button>
+        }
+    </div>    
+</nav>

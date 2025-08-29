@@ -1,0 +1,92 @@
+<app-header-c></app-header-c>
+
+<div class="container">
+
+    <div class="login-card">
+        <div class="login-header">
+            <h2 class="login-title">Sign In to Your Account</h2>
+            <p class="login-subtitle">Welcome back! Please enter your details</p>
+        </div>
+
+        <form (submit)="submitFrom()">
+            <div class="form-group">
+                <label class="form-label">Email or Username</label>
+                <div class="input-group">
+                    <i class="fas fa-user input-icon"></i>
+                    <input type="text" name="username" class="form-input" placeholder="Enter your email or username" [ngModel]="username()" (ngModelChange)="username.set($event)">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Password</label>
+                <div class="input-group">
+                    <i class="fas fa-lock input-icon"></i>
+                    <input type="password" name="password" class="form-input" placeholder="Enter your password" [ngModel]="password()" (ngModelChange)="password.set($event)">
+                </div>
+            </div>
+
+            <button type="submit" class="login-button">เข้าสู่ระบบ</button>
+        </form>
+        
+        <div class="divider">or continue with</div>
+        
+        <div class="orther">
+            <button (click)="route('/register')" class="login-button">สมัครสมาชิก</button>
+            <button (click)="route('/')" class="login-button">กลับหน้าแรก</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Simple form validation
+    document.querySelector('form').addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const username = document.querySelector('input[type="text"]').value;
+        const password = document.querySelector('input[type="password"]').value;
+
+        if (!username) {
+            alert('Please enter your username or email');
+            return;
+        }
+
+        if (!password) {
+            alert('Please enter your password');
+            return;
+        }
+
+        // Simulate login process
+        const loginBtn = document.querySelector('.login-button');
+        loginBtn.textContent = 'Signing in...';
+        loginBtn.disabled = true;
+
+        setTimeout(() => {
+            alert('Login successful! Redirecting...');
+            loginBtn.textContent = 'Sign In';
+            loginBtn.disabled = false;
+        }, 1500);
+    });
+
+    // Add hover effects to social buttons
+    const socialBtns = document.querySelectorAll('.social-btn');
+    socialBtns.forEach(btn => {
+        btn.addEventListener('mouseenter', () => {
+            const icon = btn.querySelector('i');
+            if (icon.classList.contains('fa-google')) {
+                btn.style.background = '#DB4437';
+                btn.style.color = 'white';
+            } else if (icon.classList.contains('fa-facebook-f')) {
+                btn.style.background = '#4267B2';
+                btn.style.color = 'white';
+            } else if (icon.classList.contains('fa-twitter')) {
+                btn.style.background = '#1DA1F2';
+                btn.style.color = 'white';
+            }
+        });
+
+        btn.addEventListener('mouseleave', () => {
+            btn.style.background = '#f9f9f9';
+            btn.style.color = '#e00';
+        });
+    });
+</script>

@@ -1,0 +1,16 @@
+<app-header-c></app-header-c>
+<div class="contents">
+    <div class="title">
+        <h1>เกมแนะนำ, สวัดดีครับคุณ {{ name }}</h1>
+    </div>
+    <div class="lists">
+        @for (item of items; track $index) {
+            <app-card-g-c (onClick)="onClick($event)" [id]="item.id" [image]="item.image" [title]="item.name"></app-card-g-c>
+        }
+    </div>
+</div>
+@if(isClick){
+    <div>
+        <app-card-pay-game [image]="details.image" [name]="details.name" [title]="details.details"></app-card-pay-game>
+    </div>
+}

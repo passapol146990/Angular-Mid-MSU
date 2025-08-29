@@ -1,0 +1,8 @@
+<app-header-c></app-header-c>
+<div class="contents">
+    <div class="lists">
+        @for (item of items; track $index) {
+            <app-card-g-c [id]="item.id" [image]="item.image" [title]="item.name"></app-card-g-c>
+        }
+    </div>
+</div>

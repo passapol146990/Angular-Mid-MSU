@@ -1,0 +1,30 @@
+<div class="card-pay">
+    <div>
+
+        <div>
+            <title>{{ name() }}</title>
+        </div>
+        <div>
+            <img src="{{ image() }}" alt="logo" width="100">
+        </div>
+        <div>
+            <label>{{ title() }}</label>
+        </div>
+        <div>
+            <form (submit)="submit()">
+                <div>
+                    <p>ID ผู้ใช้</p>
+                    <input [ngModel]="ID()" (ngModelChange)="ID.set($event)" type="text" name="ID" ngmo
+                        placeholder="กรอก ID ผู้ใช้ที่ต้องการเติมเกม">
+                </div>
+                <div>
+                    <p>จำนวนเงิน (บาท)</p>
+                    <input [ngModel]="money()" (ngModelChange)="money.set($event)" type="text" name="money" value="0">
+                </div>
+                <div>
+                    <button>เติมเงินด่วน</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

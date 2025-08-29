@@ -1,0 +1,20 @@
+[
+    {
+        "username":"a@a.com",
+        "password":"123456",
+        "fname":"a",
+        "lname":"aa",
+        "brithday":"2004-06-06",
+        "image":"",
+        "role":"user"
+    },
+    {
+        "username":"b@b.com",
+        "password":"789456",
+        "fname":"b",
+        "lname":"bb",
+        "brithday":"2005-07-07",
+        "image":"",
+        "role":"user"
+    }
+]

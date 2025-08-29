@@ -1,0 +1,12 @@
+.contents{
+    margin-top: 5rem;
+    .title{
+        text-align: center;
+    }
+    .lists{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+}
